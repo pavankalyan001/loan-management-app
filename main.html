@@ -1,0 +1,37 @@
+<head>
+  <title>Loan Management App</title>
+</head>
+
+<body>
+  {{> register}}
+
+  {{#if currentUser}}
+    {{#if isInRole 'borrower'}}
+      {{> borrowerDashboard}}
+    {{/if}}
+    {{#if isInRole 'lender'}}
+      {{> lenderDashboard}}
+    {{/if}}
+  {{/if}}
+</body>
+
+<body><template name="register">
+  <form>
+    <input type="email" name="email" placeholder="Email">
+    <input type="password" name="password" placeholder="Password">
+    <button type="submit">Register</button>
+  </form>
+</template>
+
+<template name="borrowerDashboard">
+  <!-- Content for the borrower dashboard -->
+</template>
+
+<template name="lenderDashboard">
+  <!-- Content for the lender dashboard -->
+</template>
+
+<template name="adminDashboard">
+  <!-- Content for the admin dashboard -->
+</template>
+</body>
